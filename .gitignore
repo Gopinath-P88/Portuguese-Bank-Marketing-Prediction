@@ -1,0 +1,12 @@
+@"
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+.Rhistory
+*.zip
+
+Data/*
+!Data/bank-additional/
+Data/bank-additional/*
+!Data/bank-additional/bank-additional-full.csv
+"@ | Set-Content .gitignore
