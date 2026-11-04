@@ -2,6 +2,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
 ![Machine Learning](https://img.shields.io/badge/Domain-Machine%20Learning-orange)
+![Streamlit](https://img.shields.io/badge/Deployment-Streamlit-red)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 
 ## Project Overview
@@ -9,6 +10,12 @@
 The Portuguese Bank Marketing Prediction project uses Machine Learning to predict whether a customer will subscribe to a bank term deposit based on demographic information, banking details, previous campaign outcomes, and economic indicators.
 
 The goal is to help banks identify potential customers and improve marketing campaign strategies.
+
+## Live Application
+
+**Try the deployed application:**
+
+[Portuguese Bank Marketing Prediction – Live Demo](https://portuguese-bank-marketing-prediction-deployment.streamlit.app/)
 
 ## Project Objectives
 
@@ -33,6 +40,7 @@ The goal is to help banks identify potential customers and improve marketing cam
 | Target variable | `y` |
 
 **Target Variable:**
+
 - `yes` – Customer subscribed to a term deposit.
 - `no` – Customer did not subscribe.
 
@@ -45,6 +53,7 @@ The goal is to help banks identify potential customers and improve marketing cam
 - Seaborn
 - Scikit-learn
 - Joblib
+- Streamlit
 - Jupyter Notebook
 
 ## Machine Learning Algorithms
@@ -71,7 +80,7 @@ Six classification algorithms were implemented:
 
 ## Final Model
 
-**Selected Model:** Random Forest Classifier
+**Selected Model: Random Forest Classifier**
 
 | Evaluation Metric | Result |
 |---|---:|
@@ -81,7 +90,7 @@ Six classification algorithms were implemented:
 | F1 Score | 51.34% |
 | ROC-AUC | 0.8091 |
 
-The Random Forest model achieved the highest F1-score among the six evaluated models.
+The Random Forest model achieved the highest F1-score among the six evaluated models, making it the selected model for this project.
 
 ## Feature Importance
 
@@ -104,13 +113,15 @@ The top influential features identified by Random Forest include:
 ProtugeseBank/
 │
 ├── Data/
-│   └── bank-additional/
-│       └── bank-additional-full.csv
+│   ├── bank.csv
+│   └── bank-names.txt
 │
 ├── ProtugeseBank.ipynb
+├── app.py
+├── requirements.txt
+├── random_forest_bank_model.pkl
 ├── bank_encoder.pkl
 ├── bank_scaler.pkl
-├── random_forest_bank_model.pkl
 ├── .gitignore
 └── README.md
 ```
@@ -132,16 +143,22 @@ cd Portuguese-Bank-Marketing-Prediction
 ### 3. Install Required Libraries
 
 ```bash
-pip install pandas numpy matplotlib seaborn scikit-learn joblib jupyter
+pip install -r requirements.txt
 ```
 
-### 4. Launch Jupyter Notebook
+### 4. Run the Streamlit Application
+
+```bash
+streamlit run app.py
+```
+
+### 5. Open the Jupyter Notebook
 
 ```bash
 jupyter notebook
 ```
 
-Open `ProtugeseBank.ipynb` to explore the complete project.
+Open `ProtugeseBank.ipynb` to explore the complete analysis and model development process.
 
 ## Model Files
 
@@ -165,8 +182,7 @@ The following trained model and preprocessing files are included:
 - SMOTE and other class imbalance techniques.
 - XGBoost model comparison.
 - SHAP-based model explainability.
-- Interactive Streamlit application.
-- Model deployment and monitoring.
+- Model monitoring and performance tracking.
 
 ## Author
 
